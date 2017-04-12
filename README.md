@@ -15,9 +15,10 @@ import TakeUntilDestroy from "angular2-take-until-destroy";
 })
 @TakeUntilDestroy
 export class InboxComponent {
+  componentDestroy;
   constructor( ) {
     const timer$ = Observable.interval(1000)
-      .takeUntil((<any>this).componentDestroy())
+      .takeUntil(this.componentDestroy())
       .subscribe(val => console.log(val))
   }
 
