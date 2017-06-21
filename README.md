@@ -22,6 +22,9 @@ export class InboxComponent {
       .subscribe(val => console.log(val))
   }
 
+  // This method must be present, even if empty! 
+  // Otherwise 'ng build --prod' will optimize away any calls to ngOnDestroy, 
+  // even if the method is added by the @TakeUntilDestroy decorator
   ngOnDestroy() {
     // You can also do whatever you need here
   }
