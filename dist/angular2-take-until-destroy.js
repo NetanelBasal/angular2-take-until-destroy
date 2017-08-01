@@ -8,6 +8,7 @@ export function TakeUntilDestroy(constructor) {
     };
     constructor.prototype.ngOnDestroy = function () {
         original && typeof original === 'function' && original.apply(this, arguments);
+        console.log("ds")
         subject.next('ngOnDestroy');
         subject.unsubscribe();
     };
