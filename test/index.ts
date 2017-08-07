@@ -35,21 +35,21 @@ test('with multiple componentDestroy calls', textContext1 => {
         ngOnDestroy() {}
     }
 
-    const component1: Test = new Test();
+    const component: Test = new Test();
 
     textContext1.test('when a component is destroyed', textContext2 => {
         textContext2.test('it should destroy all subscriptions', textContext3 => {
            textContext3.plan(3);
 
-            component1.componentDestroy().subscribe(null, null, () => {
+            component.componentDestroy().subscribe(null, null, () => {
                 textContext3.pass();
             });
 
-            component1.componentDestroy().subscribe(null, null, () => {
+            component.componentDestroy().subscribe(null, null, () => {
                 textContext3.pass();
             });
 
-           component1.ngOnDestroy();
+           component.ngOnDestroy();
 
            textContext3.pass();
        });
