@@ -4,7 +4,7 @@ export function TakeUntilDestroy( constructor : any ) {
     let originalDestroy = constructor.prototype.ngOnDestroy;
 
     constructor.prototype.componentDestroy = function () {
-        this._takeUntilDestroy$ = new Subject();
+        this._takeUntilDestroy$ = this._takeUntilDestroy$ || new Subject();
         return this._takeUntilDestroy$.asObservable();
     };
 
