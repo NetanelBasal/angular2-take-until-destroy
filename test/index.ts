@@ -27,3 +27,31 @@ test('with multiple component instances', textContext1 => {
        });
     });
 });
+
+test('with multiple componentDestroy calls', textContext1 => {
+    @TakeUntilDestroy
+    class Test {
+        componentDestroy: () => Observable<any>;
+        ngOnDestroy() {}
+    }
+
+    const component1: Test = new Test();
+
+    textContext1.test('when a component is destroyed', textContext2 => {
+        textContext2.test('it should destroy all subscriptions', textContext3 => {
+           textContext3.plan(3);
+
+            component1.componentDestroy().subscribe(null, null, () => {
+                textContext3.pass();
+            });
+
+            component1.componentDestroy().subscribe(null, null, () => {
+                textContext3.pass();
+            });
+
+           component1.ngOnDestroy();
+
+           textContext3.pass();
+       });
+    });
+});
