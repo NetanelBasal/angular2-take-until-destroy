@@ -1,16 +1,13 @@
-import { Subject } from "rxjs/Subject";
+import { Subject } from "rxjs";
 export function TakeUntilDestroy(constructor) {
-    var original = constructor.prototype.ngOnDestroy;
-    var subject;
+    var originalDestroy = constructor.prototype.ngOnDestroy;
     constructor.prototype.componentDestroy = function () {
-        subject = new Subject();
-        return subject.asObservable();
+        this._takeUntilDestroy$ = new Subject();
+        return this._takeUntilDestroy$.asObservable();
     };
     constructor.prototype.ngOnDestroy = function () {
-        original && typeof original === 'function' && original.apply(this, arguments);
-        console.log("ds")
-        subject.next('ngOnDestroy');
-        subject.unsubscribe();
+        originalDestroy && typeof originalDestroy === 'function' && originalDestroy.apply(this, arguments);
+        this._takeUntilDestroy$ && this._takeUntilDestroy$.complete();
     };
 }
 //# sourceMappingURL=angular2-take-until-destroy.js.map
