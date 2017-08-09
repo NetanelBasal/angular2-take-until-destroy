@@ -1,6 +1,6 @@
-# Angular 2 - easy unsubscribe when component destroyed 
+# Angular 2+ - Unsubscribe for pros [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-##### Angular 2 decorator - easy and declarative way to unsubscribe from observables when the component destroyed
+##### Declarative way to unsubscribe from observables when the component destroyed
 
 ## Installation
 `npm install angular2-take-until-destroy --save`
