@@ -1,27 +1,23 @@
 {
   "name": "angular2-take-until-destroy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
+  "module": "dist/es5/index.js",
   "description": "Add take until component destroy for easy unsubscribe when the component destroyed",
   "license": "MIT",
   "scripts": {
     "clearDist": "rm -rf ./dist",
     "clearTest": "rm -rf ./dist-test",
     "clear": "npm run clearDist && npm run clearTest",
-    "compile": "tsc",
+    "compile": "tsc -p tsconfig.es5.json && tsc -p tsconfig.es2015.json",
     "precompile": "npm run clearDist",
     "compileTest": "tsc -p tsconfig-test.json",
     "prepublish": "clear && npm run compile",
     "test": "npm run clear && npm run compile && npm run compileTest && tape ./dist-test/test/index.js"
   },
   "typings": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "maintainers": [
-    "Netanel Basal",
-    "Eduard Fidiles"
-  ],
+  "files": ["dist"],
+  "maintainers": ["Netanel Basal", "Eduard Fidiles"],
   "repository": {
     "url": "https://github.com/NetanelBasal/angular2-take-until-destroy"
   },
