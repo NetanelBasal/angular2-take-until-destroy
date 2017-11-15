@@ -1,4 +1,6 @@
-# Angular 2+ - Unsubscribe for pros [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Build Status](https://travis-ci.org/NetanelBasal/angular2-take-until-destroy.svg?branch=master)](https://travis-ci.org/NetanelBasal/angular2-take-until-destroy)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# Angular 2+ - Unsubscribe for pros
 
 ##### Declarative way to unsubscribe from observables when the component destroyed
 
