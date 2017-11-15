@@ -7,7 +7,7 @@
 
 ## Usage
 ```js
-import TakeUntilDestroy from "angular2-take-until-destroy";
+import { TakeUntilDestroy } from "angular2-take-until-destroy";
 
 @Component({
   selector: 'app-inbox',

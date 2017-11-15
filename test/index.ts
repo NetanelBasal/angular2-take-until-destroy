@@ -1,7 +1,7 @@
 import * as test from 'tape';
 import { Observable } from 'rxjs/Observable';
 
-import TakeUntilDestroy from '../src';
+import { TakeUntilDestroy } from '../src';
 
 test('with multiple component instances', textContext1 => {
     @TakeUntilDestroy

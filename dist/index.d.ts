@@ -1,2 +1,1 @@
-import { TakeUntilDestroy } from "./angular2-take-until-destroy";
-export default TakeUntilDestroy;
+export { TakeUntilDestroy } from "./angular2-take-until-destroy";
