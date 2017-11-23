@@ -14,6 +14,6 @@ export function TakeUntilDestroy( constructor : any ) {
   
     constructor.prototype.ngOnDestroy = function () {
         originalDestroy && typeof originalDestroy === 'function' && originalDestroy.apply(this, arguments);
-        this._takeUntilDestroy$ && this._takeUntilDestroy$.complete();
+        this._takeUntilDestroy$ && this._takeUntilDestroy$.next() && this._takeUntilDestroy$.complete();
     }
 }
