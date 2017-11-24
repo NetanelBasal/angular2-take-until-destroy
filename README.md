@@ -1,3 +1,4 @@
+Not maintained, use [ngx-take-until-destroy](https://github.com/NetanelBasal/ngx-take-until-destroy)
 
 # Angular 2+ - Unsubscribe for pros
 
